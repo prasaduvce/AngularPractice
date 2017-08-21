@@ -8,16 +8,15 @@
   </head>
 
   <body>
-      <div ng-app="myApp" ng-controller="myCtrl">
-        Hello {{firstName+" "+lastName}}
+      <div ng-app="myApp" test-directive>
       </div>
 
       <script type="text/javascript">
         var app = angular.module("myApp", []);
-
-        app.controller("myCtrl", function($scope) {
-          $scope.firstName="John";
-          $scope.lastName="Prasad";
+        app.directive("testDirective", function() {
+          return {
+            template : "I am in directive constructor!"
+          };
         });
     </script>
 
