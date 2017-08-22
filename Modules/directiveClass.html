@@ -12,17 +12,21 @@
         <test-directive></test-directive>
 
         <hr/>
-          <div test-directive></div>
+          <div class="test-directive"></div>
       </div>
 
+<p><strong>Note:</strong> You must add the value "C" to the restrict property to be able to invoke the directive from a class name.</p>
       <script type="text/javascript">
         var app = angular.module("myApp", []);
         app.directive("testDirective", function() {
           return {
+            restrict: "C",
             template : "I am in directive constructor!"
           };
         });
     </script>
+
+
 
   </body>
 </html>
