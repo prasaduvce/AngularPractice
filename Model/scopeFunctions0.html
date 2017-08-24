@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Two Way Binding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <script src="personController.js"></script>
+
+    <style type="text/css">
+    input.ng-invalid {
+      background-color: red;
+    }
+
+    input.ng-valid {
+      background-color: green;
+    }
+    </style>
+  </head>
+
+  <body>
+    <form ng-app="myApp" ng-controller="myCtrl" name="myForm">
+    <div>
+      First Name: <input type="text" ng-model="firstName"/>
+      Last Name: <input type="text" ng-model="lastName">
+      Fullname: {{fullName();}}
+
+    </div>
+
+
+  </form>
+  </body>
+</html>

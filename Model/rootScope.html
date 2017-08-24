@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Root Scope Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module("myApp", []);
+      app.run(function($rootScope) {
+        $rootScope.color="blue";
+      });
+
+      app.controller("myCtrl", function($scope) {
+        $scope.color="red";
+      });
+    </script>
+  </head>
+
+  <body ng-app="myApp">
+    <p>Color from Rootscope: {{color}}</p>
+
+    <p ng-controller="myCtrl">
+      Color from Scope: {{color}}
+    </p>
+  </body>
+</html>
